@@ -35,12 +35,12 @@ public class Utils {
     public static <T> ArrayList<T> cloneToMutableList(List<T> list) {
         return new ArrayList<T>(list);
     }
-    
-    private static String normalize(String input) {
-        return input == null ? null : Normalizer.normalize(input, Normalizer.Form.NFKD);
-    }
 
     public static String removeAccents(String input) {
         return normalize(input).replaceAll("\\p{M}", "");
+    }
+    
+    private static String normalize(String input) {
+        return input == null ? null : Normalizer.normalize(input, Normalizer.Form.NFKD);
     }
 }
